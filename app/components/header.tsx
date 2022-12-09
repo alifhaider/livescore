@@ -1,17 +1,17 @@
-import { Link, useLocation } from '@remix-run/react';
-import clsx from 'clsx';
+import { Link, useLocation } from "@remix-run/react";
+import clsx from "clsx";
 
 const LINKS = [
-  { name: 'Livescore', to: '/' },
-  { name: 'Scores', to: '/scores' },
-  { name: 'Favourites', to: '/favourites' },
-  { name: 'News', to: '/news' },
+  { name: "LiveScore", to: "/" },
+  { name: "Scores", to: "/scores" },
+  { name: "Favourites", to: "/favourites" },
+  { name: "News", to: "/news" },
 ];
 
 export function Header() {
   return (
-    <header className="bg-white shadow">
-      <ul className="hidden lg:flex">
+    <header className="shadow">
+      <ul className="flex justify-between py-4">
         {LINKS.map((link, index) => (
           <NavLink key={link.to} to={link.to}>
             <span className="ml-2 text-base">{link.name}</span>
@@ -25,7 +25,7 @@ export function Header() {
 function NavLink({
   to,
   children,
-}: Omit<Parameters<typeof Link>['0'], 'to'> & { to: string }) {
+}: Omit<Parameters<typeof Link>["0"], "to"> & { to: string }) {
   const location = useLocation();
   const isSelected =
     to === location.pathname || location.pathname.startsWith(`${to}/`);
@@ -33,10 +33,10 @@ function NavLink({
     <Link
       prefetch="intent"
       className={clsx(
-        'underlined block whitespace-nowrap text-lg font-medium hover:text-secondary focus:text-secondary focus:outline-none font-mono',
+        "block whitespace-nowrap text-lg font-medium hover:text-white focus:text-white focus:outline-none font-mono",
         {
-          'active text-secondary': isSelected,
-          'text-primary': !isSelected,
+          "active text-white": isSelected,
+          "text-green-500": !isSelected,
         }
       )}
       to={to}
