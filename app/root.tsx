@@ -1,4 +1,5 @@
 import type { MetaFunction } from '@remix-run/node';
+import styles from './styles/app.css';
 import {
   Links,
   LiveReload,
@@ -7,7 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-import styles from './styles/app.css';
+import { Header } from './components/header';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -16,6 +17,7 @@ export const meta: MetaFunction = () => ({
 });
 
 export function links() {
+  console.log(styles);
   return [{ rel: 'stylesheet', href: styles }];
 }
 
@@ -27,6 +29,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />

@@ -1,7 +1,3 @@
 export default function Index() {
-  return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
-      Livescore App
-    </div>
-  );
+  return <div className="px-4">Livescore App</div>;
 }
