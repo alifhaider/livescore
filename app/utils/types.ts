@@ -1,6 +1,5 @@
-
 export type TMatch = {
-  teams: String[],
-  time: String,
-  score: Number[]
-}
+  teams: Array<String>;
+  time: String;
+  score: Array<Number>;
+};

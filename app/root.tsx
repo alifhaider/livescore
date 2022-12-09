@@ -36,9 +36,9 @@ export default function App() {
         <Header />
         <Category />
         <div className="flex gap-4">
-        <SearchBar />
-        <Outlet />
-        <News />
+          <SearchBar />
+          <Outlet />
+          <News />
         </div>
 
         <ScrollRestoration />

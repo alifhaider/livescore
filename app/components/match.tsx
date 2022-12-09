@@ -1,6 +1,6 @@
 import { TMatch } from "~/utils/types";
 
-export function Match({teams, time, score}: TMatch){
+export function Match({ teams, time, score }: TMatch) {
   return (
     <div className="flex gap-2 items-center bg-zinc-700 rounded-md">
       <p className="flex-none p-4 w-16">{time}</p>
@@ -10,9 +10,7 @@ export function Match({teams, time, score}: TMatch){
           <li>{teams[1]}</li>
         </ul>
       </div>
-      <div className="flex-none w-4">
-        F
-      </div>
+      <div className="flex-none w-4">F</div>
     </div>
-  )
+  );
 }
