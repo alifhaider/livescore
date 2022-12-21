@@ -1,16 +1,47 @@
-import { Match } from "~/components/match";
+import { MatchFeed } from '~/components/match';
 
-import { TMatch } from "~/utils/types";
-
-const MATCHES:TMatch[] = [
-  {teams: ['Brazil', 'Croatia'], time: '02:00', score: [0,0]},
-  {teams: ['Argentina', 'Nederlands'], time:'1:00', score:[0,0]}
-]
+const MATCHES = [
+  {
+    roundName: 'Semi-Final',
+    tournamentName: 'World Cup 2022',
+    teams: ['Team A', 'Team B'],
+    time: new Date(Date.now()),
+    score: [0, 0],
+  },
+  {
+    roundName: 'Semi-Final',
+    tournamentName: 'World Cup 2022',
+    teams: ['Team C', 'Team D'],
+    time: new Date(Date.now() + 3 * 60 * 1000),
+    score: [0, 0],
+  },
+  {
+    roundName: 'Group Match',
+    tournamentName: 'Premier League',
+    teams: ['Team AB', 'Team CD'],
+    time: new Date(Date.now() + 4 * 24 * 60 * 34 * 1000),
+    score: [0, 0],
+  },
+  {
+    roundName: 'Final',
+    tournamentName: 'World Cup 2022',
+    teams: ['Team C', 'Team B'],
+    time: new Date('December 18, 2022 09:00:00'),
+    score: [0, 0],
+  },
+  {
+    roundName: '3rd Place',
+    tournamentName: 'World Cup 2022',
+    teams: ['Team A', 'Team D'],
+    time: new Date('December 17, 2022 09:00:00'),
+    score: [0, 0],
+  },
+];
 
 export default function Index() {
-  return <div className="flex flex-col gap-2 flex-auto w-64 border-2 border-solid border-zinc-500 rounded-lg px-1 py-2">
-    {MATCHES.map(match =>(
-     <Match teams={match.teams} time={match.time} score={match.score} /> 
-    ))}
-  </div>;
+  return (
+    <div className="flex flex-col gap-2 flex-auto w-64 border-2 border-solid border-zinc-500 rounded-lg px-1 py-2">
+      <MatchFeed matches={MATCHES} />
+    </div>
+  );
 }

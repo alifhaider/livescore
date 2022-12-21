@@ -1,6 +1,11 @@
+export interface TMatchProps {
+  matches: TMatch[];
+}
 
-export type TMatch = {
-  teams: String[],
-  time: String,
-  score: Number[]
+export interface TMatch {
+  roundName: string;
+  tournamentName: string;
+  teams: string[];
+  time: Date;
+  score: Array<number>;
 }
